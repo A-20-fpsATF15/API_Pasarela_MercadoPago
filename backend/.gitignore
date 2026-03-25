@@ -1,0 +1,9 @@
+# Credenciales secretas
+.env
+
+# Dependencias Node
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*

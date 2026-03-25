@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pago Pendiente | Tienda Oly</title>
+  <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+
+  <div class="result-card">
+    <div class="result-header pending">
+      <div class="result-icon">⏳</div>
+      <h1>Pago pendiente</h1>
+      <p>Tu pago está siendo procesado</p>
+    </div>
+
+    <div class="result-body">
+      <div class="info-box pending">
+        <div class="info-row">
+          <span>Estado</span>
+          <span style="color:#e65100">⏳ Pendiente</span>
+        </div>
+        <div class="info-row">
+          <span>ID de pago</span>
+          <span id="payment-id">—</span>
+        </div>
+        <div class="info-row">
+          <span>Referencia</span>
+          <span id="external-ref">—</span>
+        </div>
+      </div>
+
+      <div class="notice-box info">
+        ℹ️ <strong>¿Qué significa esto?</strong><br/>
+        Tu pago fue recibido pero aún está siendo validado.<br/>
+        Si pagaste en OXXO u otro método en efectivo,
+        puede tardar hasta <strong>72 horas</strong> en confirmarse.<br/>
+        Te notificaremos por correo cuando se confirme.
+      </div>
+
+      <a href="https://olytienda.grupoahost.com/" class="btn-primary">
+        🏠 Volver a la tienda
+      </a>
+    </div>
+
+    <div class="card-footer">
+      Procesado por 💳 <strong>MercadoPago</strong> · Tienda Oly © 2026
+    </div>
+  </div>
+
+  <script src="js/pending.js"></script>
+</body>
+</html>

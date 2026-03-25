@@ -1,0 +1,386 @@
+/* ============================================================
+   styles.css — Pasarela Tienda Oly
+   Paleta: Naranja #ff6b00 principal
+   ============================================================ */
+
+/* ── VARIABLES ───────────────────────────────────────────── */
+:root {
+  --oly-orange:       #ff6b00;
+  --oly-orange-dark:  #cc5500;
+  --oly-orange-light: #fff3e0;
+  --oly-orange-bg:    #ffe0b2;
+  --oly-green:        #2e7d32;
+  --oly-red:          #e53935;
+  --oly-white:        #ffffff;
+  --oly-gray-bg:      #f5f5f5;
+  --oly-gray-border:  #e0e0e0;
+  --oly-text:         #1a1a1a;
+  --oly-text-subtle:  #616161;
+  --oly-shadow:       0 4px 24px rgba(0,0,0,0.10);
+  --oly-radius:       12px;
+  --mp-blue:          #009ee3;
+}
+
+/* ── RESET ───────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { font-size: 16px; }
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--oly-gray-bg);
+  color: var(--oly-text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* ── NAVBAR ──────────────────────────────────────────────── */
+.checkout-navbar {
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding: 0 4px;
+}
+
+.checkout-navbar .brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--oly-orange-dark);
+  text-decoration: none;
+}
+
+.checkout-navbar .brand img {
+  height: 36px;
+  border-radius: 6px;
+}
+
+.checkout-navbar .secure-tag {
+  font-size: 0.75rem;
+  color: var(--oly-text-subtle);
+}
+
+/* ── CARD ────────────────────────────────────────────────── */
+.checkout-card {
+  background: var(--oly-white);
+  border-radius: var(--oly-radius);
+  box-shadow: var(--oly-shadow);
+  width: 100%;
+  max-width: 520px;
+  overflow: hidden;
+  border: 1px solid var(--oly-gray-border);
+}
+
+/* ── CARD HEADER ─────────────────────────────────────────── */
+.card-header {
+  background: linear-gradient(135deg, var(--oly-orange-dark), var(--oly-orange));
+  color: var(--oly-white);
+  padding: 22px 28px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.card-header .lock-icon { font-size: 26px; }
+.card-header h1         { font-size: 1.15rem; font-weight: 700; }
+.card-header p          { font-size: 0.76rem; opacity: 0.85; margin-top: 2px; }
+
+/* ── RESUMEN ─────────────────────────────────────────────── */
+.order-summary {
+  background: var(--oly-orange-light);
+  border-bottom: 1px solid var(--oly-orange-bg);
+  padding: 16px 28px;
+}
+
+.order-summary h2 {
+  font-size: 0.70rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--oly-orange-dark);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.order-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.92rem;
+  padding: 3px 0;
+  color: var(--oly-text);
+}
+
+.order-row.total {
+  border-top: 1px solid var(--oly-orange-bg);
+  margin-top: 8px;
+  padding-top: 10px;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.order-row.total span:last-child { color: var(--oly-orange-dark); }
+
+/* ── FORM BODY ───────────────────────────────────────────── */
+.card-body { padding: 24px 28px; }
+
+.form-group { margin-bottom: 15px; }
+
+label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--oly-text-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid var(--oly-gray-border);
+  border-radius: 8px;
+  font-size: 0.94rem;
+  color: var(--oly-text);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background: var(--oly-white);
+}
+
+input:focus {
+  border-color: var(--oly-orange);
+  box-shadow: 0 0 0 3px rgba(255,107,0,0.12);
+}
+
+input.error  { border-color: var(--oly-red); }
+
+.error-msg {
+  color: var(--oly-red);
+  font-size: 0.76rem;
+  margin-top: 4px;
+  display: none;
+}
+.error-msg.visible { display: block; }
+
+.row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* ── BOTÓN PAGAR ─────────────────────────────────────────── */
+.btn-pay {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, var(--oly-orange), var(--oly-orange-dark));
+  color: var(--oly-white);
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.btn-pay:hover:not(:disabled) {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+.btn-pay:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* ── BOTONES RESULTADO ───────────────────────────────────── */
+.btn-primary, .btn-secondary {
+  display: block;
+  width: 100%;
+  padding: 13px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: opacity 0.2s, background 0.2s;
+  margin-bottom: 10px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--oly-orange), var(--oly-orange-dark));
+  color: var(--oly-white);
+  border: none;
+}
+.btn-primary:hover { opacity: 0.9; }
+
+.btn-secondary {
+  background: transparent;
+  color: var(--oly-orange-dark);
+  border: 1.5px solid var(--oly-orange);
+}
+.btn-secondary:hover { background: var(--oly-orange-light); }
+
+/* ── SPINNER ─────────────────────────────────────────────── */
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: none;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── ALERTA ──────────────────────────────────────────────── */
+.alert {
+  padding: 11px 16px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  margin-bottom: 14px;
+  display: none;
+}
+.alert.error   {
+  background: #ffebee;
+  color: #c62828;
+  border-left: 4px solid var(--oly-red);
+}
+.alert.visible { display: block; }
+
+/* ── BADGES ──────────────────────────────────────────────── */
+.security-badges {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  color: var(--oly-text-subtle);
+}
+
+/* ── CARD FOOTER ─────────────────────────────────────────── */
+.card-footer {
+  background: var(--oly-gray-bg);
+  border-top: 1px solid var(--oly-gray-border);
+  padding: 13px 28px;
+  text-align: center;
+  font-size: 0.74rem;
+  color: var(--oly-text-subtle);
+}
+
+.mp-logo {
+  font-weight: 700;
+  color: var(--mp-blue);
+  text-decoration: none;
+}
+
+/* ── RESULT CARD (success/failure/pending) ───────────────── */
+.result-card {
+  background: var(--oly-white);
+  border-radius: var(--oly-radius);
+  box-shadow: var(--oly-shadow);
+  width: 100%;
+  max-width: 460px;
+  overflow: hidden;
+  border: 1px solid var(--oly-gray-border);
+  text-align: center;
+}
+
+.result-header { padding: 32px 28px; color: var(--oly-white); }
+.result-header.success { background: linear-gradient(135deg, #1b5e20, #2e7d32); }
+.result-header.failure { background: linear-gradient(135deg, #b71c1c, #e53935); }
+.result-header.pending { background: linear-gradient(135deg, #e65100, #fb8c00); }
+
+.result-icon   { font-size: 54px; margin-bottom: 10px; }
+.result-header h1 { font-size: 1.4rem; font-weight: 700; }
+.result-header p  { font-size: 0.85rem; opacity: 0.85; margin-top: 4px; }
+
+.result-body { padding: 28px; }
+
+.info-box {
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+.info-box.success { background: #e8f5e9; }
+.info-box.failure { background: #ffebee; }
+.info-box.pending { background: #fff3e0; }
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  padding: 4px 0;
+}
+.info-row span:first-child { color: var(--oly-text-subtle); }
+.info-row span:last-child  { font-weight: 600; }
+
+.notice-box {
+  border-radius: 6px;
+  padding: 12px 14px;
+  text-align: left;
+  margin-bottom: 20px;
+  font-size: 0.83rem;
+  line-height: 1.7;
+}
+.notice-box.warning {
+  background: #fff8e1;
+  border-left: 4px solid #ffc107;
+  color: #5d4037;
+}
+.notice-box.info {
+  background: #e3f2fd;
+  border-left: 4px solid #1976d2;
+  color: #0d47a1;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+@media (max-width: 540px) {
+  body { padding: 12px; }
+
+  .card-header,
+  .card-body,
+  .order-summary,
+  .result-body { padding-left: 16px; padding-right: 16px; }
+
+  .card-header { padding-top: 18px; padding-bottom: 18px; }
+  .card-header h1 { font-size: 1rem; }
+
+  .row-2 { grid-template-columns: 1fr; gap: 0; }
+
+  .checkout-navbar .brand span { display: none; }
+
+  .security-badges { gap: 10px; }
+  .badge { font-size: 0.68rem; }
+
+  .result-header { padding: 24px 16px; }
+  .result-icon   { font-size: 44px; }
+}
+
+@media (max-width: 360px) {
+  .card-header h1 { font-size: 0.92rem; }
+  .btn-pay        { font-size: 0.92rem; }
+}

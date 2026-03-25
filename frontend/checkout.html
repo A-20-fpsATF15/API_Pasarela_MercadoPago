@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <title>Pago Seguro | Tienda Oly</title>
+  <link rel="stylesheet" href="css/styles.css"/>
+  <script src="https://sdk.mercadopago.com/js/v2"></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="checkout-navbar">
+    <a class="brand" href="https://olytienda.grupoahost.com/">
+      <img src="https://equipo6.grupoahost.com/logo.png" alt="Tienda Oly"/>
+      <span>Tienda Oly</span>
+    </a>
+    <span class="secure-tag">🔒 Pago 100% seguro</span>
+  </nav>
+
+  <!-- CARD -->
+  <div class="checkout-card">
+
+    <!-- HEADER -->
+    <div class="card-header">
+      <div class="lock-icon">🔒</div>
+      <div>
+        <h1>Pago Seguro</h1>
+        <p>Conexión SSL encriptada · Powered by MercadoPago</p>
+      </div>
+    </div>
+
+    <!-- RESUMEN -->
+    <div class="order-summary">
+      <h2>Resumen del pedido</h2>
+      <div class="order-row">
+        <span id="summary-title">—</span>
+        <span id="summary-subtotal">$0.00</span>
+      </div>
+      <div class="order-row">
+        <span>Cantidad</span>
+        <span id="summary-qty">0</span>
+      </div>
+      <div class="order-row total">
+        <span>Total a pagar</span>
+        <span id="summary-total">$0.00</span>
+      </div>
+    </div>
+
+    <!-- FORMULARIO -->
+    <div class="card-body">
+      <div class="alert error" id="global-alert" role="alert"></div>
+
+      <form id="checkout-form" novalidate autocomplete="off">
+
+        <div class="form-group">
+          <label for="payer-name">Nombre completo</label>
+          <input type="text" id="payer-name"
+                 placeholder="Juan Pérez"
+                 autocomplete="name"
+                 maxlength="100"/>
+          <p class="error-msg" id="err-name">
+            Ingresa tu nombre completo (mínimo 3 caracteres).
+          </p>
+        </div>
+
+        <div class="form-group">
+          <label for="payer-email">Correo electrónico</label>
+          <input type="email" id="payer-email"
+                 placeholder="correo@ejemplo.com"
+                 autocomplete="email"
+                 maxlength="150"/>
+          <p class="error-msg" id="err-email">
+            Ingresa un correo electrónico válido.
+          </p>
+        </div>
+
+        <div class="row-2">
+          <div class="form-group">
+            <label for="product-title">Producto</label>
+            <input type="text" id="product-title"
+                   placeholder="Ej: Coca Cola 600ml"
+                   maxlength="100"/>
+            <p class="error-msg" id="err-title">Nombre del producto requerido.</p>
+          </div>
+          <div class="form-group">
+            <label for="product-qty">Cantidad</label>
+            <input type="number" id="product-qty"
+                   value="1" min="1" max="999"/>
+            <p class="error-msg" id="err-qty">Mínimo 1 unidad.</p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="product-price">Precio unitario (MXN)</label>
+          <input type="number" id="product-price"
+                 placeholder="0.00" min="0.01"
+                 max="999999" step="0.01"/>
+          <p class="error-msg" id="err-price">Ingresa un precio válido mayor a $0.</p>
+        </div>
+
+        <button type="submit" class="btn-pay" id="btn-pay">
+          <span id="btn-text">💳 Ir a pagar</span>
+          <div class="spinner" id="spinner"></div>
+        </button>
+
+      </form>
+
+      <div class="security-badges">
+        <div class="badge">🔒 SSL Encriptado</div>
+        <div class="badge">🛡️ Datos protegidos</div>
+        <div class="badge">✅ Pago verificado</div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="card-footer">
+      Procesado de forma segura por
+      <a class="mp-logo" href="https://www.mercadopago.com.mx"
+         target="_blank" rel="noopener noreferrer">
+        💳 MercadoPago
+      </a>
+    </div>
+
+  </div>
+
+  <script src="js/checkout.js"></script>
+</body>
+</html>
