@@ -6,7 +6,7 @@
 "use strict";
 
 // ── CONFIGURACIÓN ────────────────────────────────────────────
-const API_URL = "http://localhost:3000"; // Cambiar al URL de Render al desplegar
+const API_URL = "https://pasarela-oly.onrender.com"; // Cambiar al URL de Render al desplegar
 
 // ── LEER PARÁMETROS DE URL ───────────────────────────────────
 // Tu tienda puede mandar: checkout.html?title=Coca+Cola&price=22&qty=2
